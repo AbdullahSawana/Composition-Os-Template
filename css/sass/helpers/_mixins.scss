@@ -1,0 +1,43 @@
+// Media Queres Mixin
+@mixin breakPoint ($point) {
+    @if $point ==mobile {
+
+        // Mobile Screen
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @else if $point ==small {
+
+        // Taplat Screen
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $point ==medium {
+
+        // Laptop Screen
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+
+    @else if $point ==large {
+
+        // Pc Screen
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+}
+
+// Prefixer Mixin
+@mixin prefixer($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        #{"-" + $prefix + "-" + $property}: $value;
+    }
+
+    #{$property}: $value;
+}

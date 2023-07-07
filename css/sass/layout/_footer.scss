@@ -1,0 +1,143 @@
+/* Start Footer Section */
+.footer {
+    background-color: $grayColor;
+    border-bottom: 1px solid $textColor;
+
+    .footer-content {
+        @include flexbox(space-between);
+        align-items: initial;
+        padding: $marginHeading 0;
+
+        @include breakPoint(mobile) {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .box-img {
+            @include breakPoint(mobile) {
+                width: 100%;
+            }
+
+            h3 {
+                margin-bottom: 20px;
+                color: #444;
+                text-align: left;
+            }
+
+            .img-box {
+                display: flex;
+                margin: 20px 0;
+                position: relative;
+                right: 15px;
+
+                img {
+                    width: 70px;
+                    max-width: 100%;
+                    text-align: center;
+                }
+
+                .info {
+                    h4 {
+                        margin: 0;
+                        color: $greenColor;
+                    }
+
+                    p {
+                        line-height: 1.7;
+                        color: $textColor;
+                        text-align: justify;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+
+        .box-contact {
+
+
+            @include breakPoint(mobile) {
+                width: 100%;
+                order: -1;
+            }
+
+            @include breakPoint(small) {
+                order: 2;
+            }
+
+            h3 {
+                margin-bottom: 10px;
+                color: #444;
+                text-align: left;
+            }
+
+            span.msg {
+                display: none;
+                background-color: $greenColor;
+                color: #FFF;
+                font-size: 20px;
+                font-weight: 500;
+                margin: 10px 0;
+                width: fit-content;
+                padding: 10px;
+                @include prefixer(border-radius, 10px, webkit moz o);
+            }
+
+            input:not(.btn),
+            textarea {
+                width: 100%;
+                background-color: $grayColor;
+                border: 2px solid $greenColor;
+                margin: 10px 0;
+                padding: 10px;
+                text-indent: 5px;
+                caret-color: $greenColor;
+                @include prefixer(transition, $tranistionValue, webkit moz o);
+
+                &:hover,
+                &:focus {
+                    outline: none;
+                    background-color: #333;
+                    color: $greenColor;
+                }
+
+                &::placeholder {
+                    color: #FFF;
+                }
+            }
+
+            input:not(.btn) {
+                height: 40px;
+            }
+
+            textarea {
+                height: 200px;
+            }
+        }
+    }
+
+    .copyright {
+        display: flex;
+    }
+}
+
+/* End Footer Section*/
+/* Start Copy Right Section*/
+.copyright {
+    background-color: $grayColor;
+    color: #FFF;
+    @include flexbox(space-between);
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 600;
+
+    @include breakPoint(mobile) {
+        flex-direction: column;
+
+        .text {
+            margin: 10px 0;
+        }
+    }
+}
+
+/* End Copy Right Section*/
